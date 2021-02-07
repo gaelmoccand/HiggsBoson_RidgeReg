@@ -15,7 +15,7 @@ Unfortunately, this tuning has a negative effect: overfitting. Regularization is
 ## 3. Results
 For each prediction methods, the training set is split in 2random subsets. The first one has 3/4 of the data and is usedas a proper training set whereas the rest goes into a testingset to avoid overfitting. As a baseline, a simple least together with a polynomial basiswith  different  degrees  and  a  simple  preprocessing  is  used.As it can be seen on Fig.1, it is obvious that the polynomialbasis does not bring much. However, not every polynomialbasis can be used because some basis lead to an unsolvablesolution, that’s the reason why some points are missing onthe figure.  
 
-![MSE w.r.t polynomial degree for direct least squares method](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![MSE w.r.t polynomial degree for direct least squares method](HiggsBoson_detection/report/pics/formula1.png "Logo Title Text 1")
 
 
 [Results can be found here in report pdf](HiggsBoson_detection/report/bazinga-submission.pdf)
