@@ -9,13 +9,20 @@ The  Higgs  boson  is  an  elementary  particle  discoveredat  the  Large  Hadro
 ## 2. Methodology
 Before  digging  into  prediction  methods,  it  is  beneficialto  handle  the  data.  The  preprocessing  is  key  and  impactsthe  prediction.  For  instance,  a  scatter  plot  matrix  of  each features can be useful to select or drop some features. In ourcase,  a  basic  standardization  by  subtracting  the  mean  and dividing  by  the  standard  deviation  is  applied  to  the  inputdata.  Furthermore,  the  missing  value  are  replaced  by  themean  of  the  corresponding  feature,  which  is  better  than  avalue which has no signification. This will be referred to assimple  preprocessing.  In  a  second  phase,  the  positive  data are replaced by the log of their inverse, i.e.log(1/1+x)before the standardization. Taking the log is a common technique.In  this  case,  it  makes  sure  that  all  the  values  are  negative.This will be referred to as complex preprocessing.To predict the nature of the measurement, we need to find a function that best approximates the outputywith the given inputs x
 
+![MSE w.r.t polynomial degree for direct least squares method](HiggsBoson_detection/report/pics/formula1.png "Logo Title Text 1")
+
+Linear models are inherently not very rich. A way to increasetheir representational power it boost the inputs by adding apolynomial basisφ(xn)of arbitrary degreeM. We then fita linear model to the extended feature vector:
+
+yn≈φ(xn)Tw.
 
 Unfortunately, this tuning has a negative effect: overfitting. Regularization is a way to mitigate this undesirable behavior  by  penalizing  the  model  with  a  parameter Ω(w).  The optimization problem becomes
+
+![MSE w.r.t polynomial degree for direct least squares method](HiggsBoson_detection/report/pics/formula2.png "Logo Title Text 1")
+
 
 ## 3. Results
 For each prediction methods, the training set is split in 2random subsets. The first one has 3/4 of the data and is usedas a proper training set whereas the rest goes into a testingset to avoid overfitting. As a baseline, a simple least together with a polynomial basiswith  different  degrees  and  a  simple  preprocessing  is  used.As it can be seen on Fig.1, it is obvious that the polynomialbasis does not bring much. However, not every polynomialbasis can be used because some basis lead to an unsolvablesolution, that’s the reason why some points are missing onthe figure.  
 
-![MSE w.r.t polynomial degree for direct least squares method](HiggsBoson_detection/report/pics/formula1.png "Logo Title Text 1")
 
 
 [Results can be found here in report pdf](HiggsBoson_detection/report/bazinga-submission.pdf)
