@@ -12,7 +12,11 @@ see report
 ## 3. Results
 For each prediction methods, the training set is split in 2random subsets. The first one has 3/4 of the data and is usedas a proper training set whereas the rest goes into a testingset to avoid overfitting.As a baseline, a simple least together with a polynomial basiswith  different  degrees  and  a  simple  preprocessing  is  used.As it can be seen on Fig.1, it is obvious that the polynomialbasis does not bring much. However, not every polynomialbasis can be used because some basis lead to an unsolvablesolution, that’s the reason why some points are missing onthe figure.  
 
+## 4. Discussion
+There  are  few  things  that  can  probably  be  improved  inorder  to  get  better  prediction.  Firstly  MSE  is  not  a  goodcost  function  when  outliers  are  present  which  is  the  casehere. One should thus look for another cost function. Then,least  squares  is  a  pretty  basic  model.  The  next  step  wouldbe  to  use  a  logistic  regression  instead.  However,  we  couldnot manage to make it converge.Regarding   preprocessing,   an   improvement   would   be   toweight  the  features  independently  instead  of  having  themequally  weighted.  Moreover,  there  is  a  feature  which  onlyhas integer numbers. A possible improvement would be notto feed it to the polynomial basis and use this feature directly.Unfortunately, this trick has not shown much improvementon the final score. Finally, when the preprocessing changedfrom  simple  to  complex,  the  whole  optimization  processshould be done again to guarantee the best prediction withthe appropriate hyperparameters
 
+## 5. Summary
+In  this  work  we  have  shown  that  one  can  have  a  fairlygood  prediction  using  simple  machine  learning  techniqueslike the least squares regression and the ridge regularizationas long as one takes care of handling the data properly. Wehave  also  highlighted  the  fact  that  in  the  field  of  machinelearning, one should be careful and that some intuition thatseem good a priori yield worse prediction.
 
 [Results can be found here in report pdf](HiggsBoson_detection/report/bazinga-submission.pdf)
 
